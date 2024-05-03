@@ -27,6 +27,11 @@
       apt:
         autoclean: yes
 
+    # Task to remove used packages after update. This will free up disk space
+    - name: Remove unused packages
+      apt:
+        autoremove: yes
+
     # Task to reboot the Raspberry Pi if required after updates
     - name: Reboot Raspberry Pi if required
       command: "reboot"
