@@ -1,14 +1,5 @@
-# RPi_ansible
-Ansible scripts for setting up and configuring my Raspberry Pi devices
-
-### Tips
-- When a device needs a sudo/become password, you should execute the ansible playbook with the `--ask-become-pass` parameter:
-- Search all sections for `CHANGE_ME`. These values need to be changed before execution
-
-### CLI Command(s)
-- `ansible-playbook -i hosts/hosts.ini --ask-become-pass system-update.yaml`
-
-
+# Raspberry Pi Ansible Configs
+Ansible configs for setting up and configuring my Raspberry Pi devices.
 
 ## Ansible Commands and Parameters
 
@@ -59,3 +50,11 @@ Ansible scripts for setting up and configuring my Raspberry Pi devices
 - `ansible-cli job launch <job_template_id>`: Launch a job based on a job template.
 
 For more information, refer to the [Ansible Documentation](https://docs.ansible.com/).
+
+### Tips
+- When a device needs a sudo/become password, you should execute the ansible playbook with the `--ask-become-pass` parameter.
+- Search all sections for `CHANGE_ME`. These values need to be changed before execution.
+
+### CLI Command(s)
+- `ansible-playbook -i hosts/hosts.ini --ask-become-pass system-update.yaml`
+
