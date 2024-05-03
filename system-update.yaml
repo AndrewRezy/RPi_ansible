@@ -1,0 +1,36 @@
+---
+# Ansible playbook to update Raspberry Pi devices
+
+# Define the playbook's name
+- name: Update Raspberry Pi
+
+  # Specify the hosts or groups of hosts to target
+  hosts: raspberry_pi
+  
+  # Indicate that privilege escalation (sudo) is required
+  become: yes
+
+  # Define the tasks to be executed on the targeted hosts
+  tasks:
+    # Task to update the package cache
+    - name: Update package cache
+      apt:
+        update_cache: yes
+
+    # Task to upgrade all packages to the latest version
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+
+    # Task to clean up the package cache to free up space
+    - name: Clean up package cache
+      apt:
+        autoclean: yes
+
+    # Task to reboot the Raspberry Pi if required after updates
+    - name: Reboot Raspberry Pi if required
+      command: "reboot"
+      async: 0
+      poll: 0
+      ignore_errors: true
+      become: yes
