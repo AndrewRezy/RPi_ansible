@@ -6,6 +6,9 @@
 
   # Specify the hosts or groups of hosts to target
   hosts: raspberry_pi
+
+  # Specify the remote user for the account. This assumes all your accounts have the same username/password
+  remote_user: CHANGE_ME
   
   # Indicate that privilege escalation (sudo) is required
   become: yes
