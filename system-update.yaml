@@ -33,9 +33,9 @@
         autoremove: yes
 
     # Task to reboot the Raspberry Pi if required after updates
-    - name: Reboot Raspberry Pi if required
-      command: "reboot"
-      async: 0
-      poll: 0
-      ignore_errors: true
-      become: yes
+    #- name: Reboot Raspberry Pi if required
+    #  command: "reboot"
+    #  async: 0
+    #  poll: 0
+    #  ignore_errors: true
+    #  become: yes
