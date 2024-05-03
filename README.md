@@ -1,5 +1,5 @@
 # RPi_ansible
-Ansible scripts for setting up my Raspberry Pi labs
+Ansible scripts for setting up and configuring my Raspberry Pi devices
 
 ### Tips
 - When a device needs a sudo/become password, you should execute the ansible playbook with the `--ask-become-pass` parameter:
