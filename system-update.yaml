@@ -23,7 +23,8 @@
     # Task to upgrade all packages to the latest version
     - name: Upgrade all packages
       apt:
-        upgrade: dist
+        upgrade: yes
+        state: latest
 
     # Task to clean up the package cache to free up space
     - name: Clean up package cache
