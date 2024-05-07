@@ -1,6 +1,10 @@
 # Raspberry Pi Ansible Configs
 Ansible configs for setting up and configuring my Raspberry Pi devices.
 
+`system-update.yaml` - runs the apt update and apt upgrade commands as sudo (no reboot after update)
+
+`docker_cleanup.yml` - cleans up dangling docker images
+
 ## Ansible Commands and Parameters
 
 ### Basic Commands:
