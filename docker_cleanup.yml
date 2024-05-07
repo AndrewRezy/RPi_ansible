@@ -4,6 +4,8 @@
   hosts: raspberry_pi
   # Run tasks with elevated privileges
   become: yes
+  # Specify the remote user for the account. This assumes all your accounts have the same username/password
+  remote_user: CHANGE_ME
 
   tasks:
 
