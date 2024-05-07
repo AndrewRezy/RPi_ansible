@@ -1,0 +1,36 @@
+# Target the host named 'raspberry_pi'
+---
+- name: Prune Docker objects on Raspberry Pi
+  hosts: raspberry_pi
+  # Run tasks with elevated privileges
+  become: yes
+
+  tasks:
+
+    # Task to prune Docker system
+    - name: Prune Docker system
+      ansible.builtin.command:
+        # Execute the 'docker system prune' command with '--force' option
+        cmd: docker system prune --force
+      # Capture the command output in the 'system_prune_result' variable
+      register: system_prune_result
+
+    # Task to print the 'docker system prune' output
+    - name: Print system prune results
+      ansible.builtin.debug:
+        # Print the lines from the 'stdout' output
+        var: system_prune_result.stdout_lines
+
+    # Task to prune Docker images
+    - name: Prune Docker images
+      ansible.builtin.command:
+        # Execute the 'docker image prune' command with the '--force' option
+        cmd: docker image prune --force
+      # Capture the command output in the 'image_prune_result' variable
+      register: image_prune_result
+
+    # Task to print the 'docker image prune' output
+    - name: Print image prune results
+      ansible.builtin.debug:
+        # Print the lines from the 'stdout' output
+        var: image_prune_result.stdout_lines
